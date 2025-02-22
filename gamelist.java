@@ -20,11 +20,11 @@ public class GameList{
             int index7 = str.indexOf(",", index6 + 1);
             int index8 = str.indexOf(",", index7 + 1);
             int index9 = str.indexOf(",", index8 + 1);
-            //int index10 = str.indexOf(",", index9 + 1);
          
          
             String numeral = str.substring(0, index1);
-            int year = Integer.valueOf(str.substring(index2 + 1, index3 - 1));
+            String date = str.substring(index1 + 1, index2 - 1);
+            int year = Integer.valueOf(date.substring(date.length() - 4));
             String winningTeam = str.substring(index3 + 1, index4);
             String location = str.substring(index8 + 2, index9 - 1);
             String losingTeam = str.substring(index5 + 1, index6);
