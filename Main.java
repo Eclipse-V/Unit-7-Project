@@ -2,7 +2,7 @@ public class Main
 {
     public static void main(String[] args)  throws Exception{
         GameList game = new GameList();
-        game.sortByYear();
+        game.sortByPointDifferential();
         System.out.println(game.getSuperBowls());
 
     }
