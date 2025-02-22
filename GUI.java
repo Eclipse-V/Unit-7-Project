@@ -5,7 +5,7 @@ public class GUI{
 
   public void runGUI() throws Exception{
     //creates a GameList object
-    //GameList g = new GameList();
+    GameList g = new GameList();
     JFrame f=new JFrame("SuperBowl Data");  //Creates a Frame with Title
     final JTextField tf=new JTextField();  //Creates a text Field
     tf.setBounds(50,50, 100,20); 
@@ -25,7 +25,7 @@ public class GUI{
         public void actionPerformed(ActionEvent e){ 
 
           String textFieldValue = tf.getText();//Obtains String typed into text value
-      System.out.println("This is what you wrote: " + textFieldValue);//Prints to Console
+          System.out.println(g.numWins(textFieldValue));//Prints to Console
           } 
       });
 

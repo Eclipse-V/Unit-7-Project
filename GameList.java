@@ -49,7 +49,7 @@ public class GameList{
         return count;
     }
 
-    //look back on this
+    
     public void sortByYear(){
         for (int i = 0; i < superBowls.size() - 1; i++){
             int minIndex = i;
