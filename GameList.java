@@ -6,9 +6,9 @@ public class GameList{
     public ArrayList<Game> superBowls = new ArrayList<Game>();
     
     public GameList() throws Exception{
-        File file = new File("src/main/java/SuperBowlData.txt");
+        File file = new File("SuperBowlData.txt");
         Scanner text = new Scanner(file);
-         
+        text.nextLine(); 
          while(text.hasNextLine()){
              String str = text.nextLine();
              int index1 = str.indexOf(",");
@@ -23,10 +23,9 @@ public class GameList{
          
          
             String numeral = str.substring(0, index1);
-            String date = str.substring(index1 + 1, index2 - 1);
-            int year = Integer.valueOf(date.substring(date.length() - 4));
+            int year = Integer.valueOf(str.substring((index2 + 2), (index3 - 1)));
             String winningTeam = str.substring(index3 + 1, index4);
-            String location = str.substring(index8 + 2, index9 - 1);
+            String location = str.substring((index8 + 2), (index9 - 1));
             String losingTeam = str.substring(index5 + 1, index6);
             String score = str.substring(index4 + 1, index5);
             Game g = new Game(numeral, year, location, winningTeam, losingTeam, score);
