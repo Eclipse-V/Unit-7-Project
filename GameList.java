@@ -51,33 +51,23 @@ public class GameList{
 
     //look back on this
     public void sortByYear(){
-        for (int i = 0; i < superBowls.size(); i++){
+        for (int i = 0; i < superBowls.size() - 1; i++){
             int minIndex = i;
-            Game min = superBowls.get(i);
+            Game currentGame = superBowls.get(i);
+            int minYear = currentGame.getYear();
             for(int j = i + 1; j < superBowls.size(); i++){
-                if(superBowls.get(j).getYear() < superBowls.get(minIndex).getYear()){
+                Game nextGame = superBowls.get(j);
+                if(nextGame.getYear() < minYear){
+                    minYear = nextGame.getYear();
                     minIndex = j;
-                    min = superBowls.get(j);
+
                 }
-                /*superBowls.set(minIndex, superBowls.get(i));
-                superBowls.set(i, min);  */   
             }
-            superBowls.set(minIndex, superBowls.get(i));
-            superBowls.set(i, min); 
+            Game temp = superBowls.get(i);
+            superBowls.set(i, superBowls.get(minIndex));
+            superBowls.set(minIndex, temp); 
         }
 
-        /*for(Game game: games){
-            //Check the current min value
-            int min = game.getYear();
-            int minIndex = i;
-            for(int j = i; j < games.size(); j++){
-                if(games.get(j).getYear() < min){
-                    min = games.get(j).getYear();
-                    minIndex = j;
-                }
-        
-        games.set(minIndex, game);
-        games.set(game, minIndex);*/
     }
 
     public void sortByWinningTeam(){
