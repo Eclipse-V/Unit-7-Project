@@ -1,18 +1,24 @@
-/*import java.awt.event.*; 
+import java.awt.event.*; 
 import javax.swing.*; 
 
 public class GUI{
 
-  public void runGUI(){
-
-    JFrame f=new JFrame("Title");  //Creates a Frame with Title
+  public void runGUI() throws Exception{
+    //creates a GameList object
+    //GameList g = new GameList();
+    JFrame f=new JFrame("SuperBowl Data");  //Creates a Frame with Title
     final JTextField tf=new JTextField();  //Creates a text Field
     tf.setBounds(50,50, 100,20); 
     //setBounds(x location, y location, width, height)
-    JButton b1=new JButton("Button 1");  //Creates a Button
+    JButton b1=new JButton("Number of wins:");  //Creates a Button
     b1.setBounds(50,100,200, 30);
-    JButton b2=new JButton("Button 2");  //Creates a Button
+    JButton b2=new JButton("Order by Year");  //Creates a Button
     b2.setBounds(50,150,200,30);
+    JButton b3=new JButton("Order by Winning Team");  //Creates a Button
+    b3.setBounds(50,150,200,30);
+    JButton b4=new JButton("Order by point Spread");  //Creates a Button
+    b4.setBounds(50,150,200,30);
+    
 
       //The block of code below this tells the program what to do when the button is clicked.
       b1.addActionListener(new ActionListener(){ 
@@ -37,5 +43,5 @@ public class GUI{
       f.setLayout(null); 
       f.setVisible(true);
     }
-}*/
+}
 
