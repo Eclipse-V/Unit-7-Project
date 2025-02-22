@@ -71,42 +71,47 @@ public class GameList{
     }
 
     public void sortByWinningTeam(){
-        for (int i = 0; i < superBowls.size(); i++){
+        for (int i = 0; i < superBowls.size() - 1; i++){
             int minIndex = i;
-            Game min = superBowls.get(i);
+            Game currentGame = superBowls.get(i);
+            String firstWinningTeam = currentGame.getWinningTeam();
             for(int j = i + 1; j < superBowls.size(); i++){
-                if(superBowls.get(j).getWinningTeam().compareTo(superBowls.get(minIndex).getWinningTeam()) < 0){
+                Game nextGame = superBowls.get(j);
+                if(nextGame.getWinningTeam().compareTo(firstWinningTeam) < 0){
+                    firstWinningTeam = nextGame.getWinningTeam();
                     minIndex = j;
-                    min = superBowls.get(j);
                 }    
             }
-            superBowls.set(minIndex, superBowls.get(i));
-            superBowls.set(i, min); 
+            Game temp = superBowls.get(i);
+            superBowls.set(i, superBowls.get(minIndex));
+            superBowls.set(minIndex, temp); 
         }
     }
 
     public void sortByPointDifferential(){
-        for(int i = 0; i < superBowls.size(); i++){
-            Game min = superBowls.get(i);
+        for (int i = 0; i < superBowls.size() - 1; i++){
             int minIndex = i;
-            String pointDiff1 = min.getScore();
-            int dash1 = pointDiff1.indexOf("-");
-            int firstScore1 = Integer.valueOf(pointDiff1.substring(0, dash1));
-            int secondScore1 = Integer.valueOf(pointDiff1.substring(dash1));
+            Game currentGame = superBowls.get(i);
+            String minScoreDiff = currentGame.getScore();
+            int dash1 = minScoreDiff.indexOf("–");
+            int firstScore1 = Integer.valueOf(minScoreDiff.substring(0, dash1));
+            int secondScore1 = Integer.valueOf(minScoreDiff.substring(dash1));
             int diff1 = Math.abs(firstScore1 - secondScore1);
-            for(int j = i + 1; j < superBowls.size(); j++){
-                String pointDiff2 = superBowls.get(j).getScore();
-                int dash2 = pointDiff2.indexOf("-");
-                int firstScore2 = Integer.valueOf(pointDiff2.substring(0, dash2));
-                int secondScore2 = Integer.valueOf(pointDiff2.substring(dash2));
+            for(int j = i + 1; j < superBowls.size(); i++){
+                Game nextGame = superBowls.get(j);
+                String nextScoreDiff = nextGame.getScore();
+                int dash2 = minScoreDiff.indexOf("–");
+                int firstScore2 = Integer.valueOf(nextScoreDiff.substring(0, dash1));
+                int secondScore2 = Integer.valueOf(nextScoreDiff.substring(dash1));
                 int diff2 = Math.abs(firstScore2 - secondScore2);
                 if(diff2 < diff1){
-                    min = superBowls.get(j);
+                    minScoreDiff = nextGame.getScore();
                     minIndex = j;
                 }
             }
-            superBowls.set(minIndex, superBowls.get(i));
-            superBowls.set(i, min);
+            Game temp = superBowls.get(i);
+            superBowls.set(i, superBowls.get(minIndex));
+            superBowls.set(minIndex, temp); 
         }
     }
     
