@@ -3,8 +3,8 @@ public class Game{
     private int year;
     private String location;
     private String winningTeam;
-   private String losingTeam;
-   private String score;
+    private String losingTeam;
+    private String score;
 
     public Game(String n, int y, String l, String w, String losing, String s){
         numeral = n;
@@ -24,7 +24,7 @@ public class Game{
     public String getLocation(){
         return location;
     }
-    public String getWinnningTeam(){
+    public String getWinningTeam(){
         return winningTeam;
     }
     public String getLosingTeam(){
