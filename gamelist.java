@@ -2,10 +2,10 @@ import java.util.ArrayList;
 import java.io.*;  
 import java.util.Scanner;
 
-public class Gamelist{
+public class GameList{
     public ArrayList<Game> superBowls = new ArrayList<Game>();
     
-    public Gamelist() throws Exception{
+    public GameList() throws Exception{
         File file = new File("src/main/java/SuperBowlData.txt");
         Scanner text = new Scanner(file);
          
