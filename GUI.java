@@ -31,7 +31,8 @@ public class GUI{
 
       b2.addActionListener(new ActionListener(){ 
         public void actionPerformed(ActionEvent e){ 
-          System.out.println("This is what I wrote: Hi!");
+          g.sortByYear();
+          System.out.println(g.getSuperBowls());
           } 
       });
 

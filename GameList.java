@@ -55,12 +55,11 @@ public class GameList{
             int minIndex = i;
             Game currentGame = superBowls.get(i);
             int minYear = currentGame.getYear();
-            for(int j = i + 1; j < superBowls.size(); i++){
+            for(int j = i + 1; j < superBowls.size(); j++){
                 Game nextGame = superBowls.get(j);
                 if(nextGame.getYear() < minYear){
                     minYear = nextGame.getYear();
                     minIndex = j;
-
                 }
             }
             Game temp = superBowls.get(i);
@@ -75,7 +74,7 @@ public class GameList{
             int minIndex = i;
             Game currentGame = superBowls.get(i);
             String firstWinningTeam = currentGame.getWinningTeam();
-            for(int j = i + 1; j < superBowls.size(); i++){
+            for(int j = i + 1; j < superBowls.size(); j++){
                 Game nextGame = superBowls.get(j);
                 if(nextGame.getWinningTeam().compareTo(firstWinningTeam) < 0){
                     firstWinningTeam = nextGame.getWinningTeam();
@@ -97,7 +96,7 @@ public class GameList{
             int firstScore1 = Integer.valueOf(minScoreDiff.substring(0, dash1));
             int secondScore1 = Integer.valueOf(minScoreDiff.substring(dash1 + 1));
             int diff1 = Math.abs(firstScore1 - secondScore1);
-            for(int j = i + 1; j < superBowls.size(); i++){
+            for(int j = i + 1; j < superBowls.size(); j++){
                 Game nextGame = superBowls.get(j);
                 String nextScoreDiff = nextGame.getScore();
                 int dash2 = minScoreDiff.indexOf("–");
