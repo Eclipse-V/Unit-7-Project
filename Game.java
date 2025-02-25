@@ -1,4 +1,5 @@
 public class Game{
+    //instance variables for the Game object
     private String numeral;
     private int year;
     private String location;
@@ -6,6 +7,7 @@ public class Game{
     private String losingTeam;
     private String score;
 
+    //constructor 
     public Game(String n, int y, String l, String w, String losing, String s){
         numeral = n;
         year = y;
@@ -52,6 +54,7 @@ public class Game{
     public void setScore(String s){
         score = s;
     }
+    //toString method to format the variables 
     public String toString(){
         return "\nSuperbowl " + numeral + ": " + winningTeam + " defeated " + losingTeam + "\nScore: " + score + "\nYear: " + year + "\nLocation: " + location + "\n";
     }

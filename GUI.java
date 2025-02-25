@@ -31,22 +31,22 @@ public class GUI{
 
       b2.addActionListener(new ActionListener(){ 
         public void actionPerformed(ActionEvent e){ 
-          g.sortByYear();
-          System.out.println(g.getSuperBowls());
+          g.sortByYear(); //Sorts the object by order of year
+          System.out.println(g.getSuperBowls()); //Prints to Console
           } 
       });
 
       b3.addActionListener(new ActionListener(){ 
         public void actionPerformed(ActionEvent e){ 
-          g.sortByWinningTeam();
-          System.out.println(g.getSuperBowls());
+          g.sortByWinningTeam(); //Sorts the object by the winning team alphabetically
+          System.out.println(g.getSuperBowls()); //Prints to Console
           } 
       });
 
       b4.addActionListener(new ActionListener(){ 
         public void actionPerformed(ActionEvent e){ 
-          g.sortByPointDifferential();
-          System.out.println(g.getSuperBowls());
+          g.sortByPointDifferential(); //sorts the object by the greatest to least score difference
+          System.out.println(g.getSuperBowls()); //Prints to Console
           } 
       });
 
