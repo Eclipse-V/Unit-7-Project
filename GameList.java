@@ -105,17 +105,15 @@ public class GameList{
             Game currentGame = superBowls.get(i);
             String minScoreDiff = currentGame.getScore();
             //getting the score differnce 
-            int dash1 = minScoreDiff.indexOf("–");
-            int firstScore1 = Integer.valueOf(minScoreDiff.substring(0, dash1));
-            int secondScore1 = Integer.valueOf(minScoreDiff.substring(dash1 + 1));
+            int firstScore1 = Integer.valueOf(minScoreDiff.substring(0, 2));
+            int secondScore1 = Integer.valueOf(minScoreDiff.substring(3));
             int diff1 = Math.abs((firstScore1 - secondScore1));
             
             for(int j = i + 1; j < superBowls.size(); j++){
                 Game nextGame = superBowls.get(j);
                 String nextScoreDiff = nextGame.getScore();
-                int dash2 = minScoreDiff.indexOf("–");
-                int firstScore2 = Integer.valueOf(nextScoreDiff.substring(0, dash1));
-                int secondScore2 = Integer.valueOf(nextScoreDiff.substring(dash1 + 1));
+                int firstScore2 = Integer.valueOf(nextScoreDiff.substring(0, 2));
+                int secondScore2 = Integer.valueOf(nextScoreDiff.substring(3));
                 int diff2 = Math.abs((firstScore2 - secondScore2));
                 if(diff2 > diff1){
                     diff1 = diff2;
